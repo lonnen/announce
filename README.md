@@ -26,4 +26,15 @@ heroku config:set \
 git push heroku master
 ```
 
-Register a new hook with your repo at `https://new-announcer.herokuapp.com`
+Register a new hook with your repo at `https://basic_username:basic_password@new-announcer.herokuapp.com`
+
+What does it looks like?
+------------------------
+
+Check out the [demo account](https://twitter.com/AnnounceTest)
+
+TODOs
+-----
+
+* tests
+* a better name
