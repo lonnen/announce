@@ -23,7 +23,7 @@ class GithubTwitter
       Mustache.render(
         template,
         :name => payload['repository']['name'],
-        :tag => payload['tag'] )),
+        :tag => payload['tag'],
         :url => payload['repository']['url']
       )
     )
