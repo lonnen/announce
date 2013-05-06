@@ -7,7 +7,7 @@ Deployment
 ----------
 
 * Create a twitter account
-* Register a [new twitter app](https://dev.twitter.com)
+* Register a [new twitter oauth app](https://dev.twitter.com/docs/auth/tokens-devtwittercom)
 * Set the permissions to read/write
 * Generate a personal key for your account
 
