@@ -1,5 +1,6 @@
 require 'erb'
 require 'json'
+require 'mustache'
 require 'sinatra'
 require 'twitter'
 
@@ -17,8 +18,8 @@ class GithubTwitter
     repo = payload["repository"]["name"]
     payload['tag'] = payload["ref"][10..-1]
 
-    template = ERB.new("New [<%= payload['repository']['name'] %>] tag: <%= payload['tag'] %> - <%= payload['repository']['url'] %>")
-    connect(repo).update(template.result)
+    template = "New [{{ payload['repository']['name'] }}] tag: {{ payload['tag'] }} - {{ payload['repository']['url'] }}"
+    connect(repo).update(Mustache.render(template, payload))
   end
 
   def connect(repo)
