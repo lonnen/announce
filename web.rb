@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'JSON'
 
 use Rack::Auth::Basic, "Restricted" do |username, password|
   username == ENV['USERNAME'] and password == ENV['PASSWORD']
