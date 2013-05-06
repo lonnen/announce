@@ -18,7 +18,7 @@ class GithubTwitter
     payload['tag'] = payload["ref"][10..-1]
 
     template = ERB.new("New [<%= payload['repository']['name'] %>] tag: <%= payload['tag'] %> - <%= payload['repository']['url'] %>")
-    connect(repo).update(template.result(payload))
+    connect(repo).update(template.result)
   end
 
   def connect(repo)
