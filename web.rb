@@ -1,5 +1,7 @@
-require 'sinatra'
+require 'erb'
 require 'json'
+require 'sinatra'
+require 'twitter'
 
 use Rack::Auth::Basic, "Restricted" do |username, password|
   username == ENV['BASIC_USERNAME'] and password == ENV['BASIC_PASSWORD']
