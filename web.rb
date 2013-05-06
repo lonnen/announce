@@ -19,7 +19,7 @@ class GithubTwitter
     repo = payload["repository"]["name"]
     payload['tag'] = payload["ref"][10..-1]
 
-    template = "New [{{ name }}] tag: {{ tag }} - {{ url }}"
+    template = "New {{ name }} tag: {{ tag }} - {{ url }}"
     connect(repo).update(
       Mustache.render(
         template,
