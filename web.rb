@@ -1,14 +1,14 @@
 require 'sinatra'
 
 use Rack::Auth::Basic, "Restricted" do |username, password|
-  username == 'admin' and password == 'admin'
+  username == ENV['USERNAME'] and password == ENV['PASSWORD']
 end
 
 get '/ping' do
   "Pong"
 end
 
-post '/' do
+post '/hook' do
   push = JSON.parse(params[:payload])
   "I got some JSON: #{push.inspect}"
 end
