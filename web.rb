@@ -10,11 +10,12 @@ end
 
 class GithubTwitter
 
+
   def initialize(payload)
     payload = JSON.parse(payload)
-    p payload
     return unless payload.keys.include?("repository")
     return unless payload["ref"].include?("tags")
+    return unless payload["after"].include?("0000000000000000000000000")
     repo = payload["repository"]["name"]
     payload['tag'] = payload["ref"][10..-1]
 
