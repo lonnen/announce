@@ -15,7 +15,7 @@ class GithubTwitter
     payload = JSON.parse(payload)
     return unless payload.keys.include?("repository")
     return unless payload["ref"].include?("tags")
-    return unless payload["after"].include?("0000000000000000000000000")
+    return unless payload["before"].include?("0000000000000000000000000")
     repo = payload["repository"]["name"]
     payload['tag'] = payload["ref"][10..-1]
 
