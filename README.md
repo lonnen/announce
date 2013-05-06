@@ -11,8 +11,10 @@ run:
 ```
 heroku create new-announcer
 heroku config:set \
-    USERNAME="basic auth username" \
-    PASSWORD="basic auth password"
+    BASIC_USERNAME="basic auth username" \
+    BASIC_PASSWORD="basic auth password" \
+    TWITTER_USERNAME="twitter account username" \
+    TWITTER_PASSWORD="twitter account password"
 
 git push heroku master
 ```
