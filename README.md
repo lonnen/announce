@@ -37,4 +37,5 @@ TODOs
 -----
 
 * tests
+* travis-ci
 * a better name
