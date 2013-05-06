@@ -21,11 +21,16 @@ class GithubTwitter
     end
 
     template = ERB.new("New [<%= payload['repository']['name'] %>] tag: <%= payload['tag'] %> - <%= payload['repository']['url'] %>")
-    connect(repo).post(template.result(proc))
+    connect(repo).update(template.result(proc))
   end
 
   def connect(repo)
-    return Twitter::Base.new(ENV['TWITTER_USERNAME'], ENV['TWITTER_PASSWORD'])
+    return Twitter::Client.new(
+      :oauth_token => ENV['TWITTER_TOKEN'],
+      :oauth_token_secret => ENV['TWITTER_TOKEN_SECRET'],
+      :consumer_key => ENV['TWITTER_CONSUMER_KEY'],
+      :consumer_secret => ENV['TWITTER_CONSUMER_SECRET']
+    )
   end
 
 end
