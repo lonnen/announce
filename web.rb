@@ -11,5 +11,5 @@ end
 
 post '/hook' do
   push = JSON.parse(params[:payload])
-  p push
+  p params[:payload]
 end
