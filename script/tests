@@ -1,4 +1,4 @@
 #!/bin/sh
 # Run the tests
 
-# huh?
+puts "Tests? How do those work?"

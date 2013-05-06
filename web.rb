@@ -10,7 +10,6 @@ end
 
 class GithubTwitter
 
-
   def initialize(payload)
     payload = JSON.parse(payload)
     return unless payload.keys.include?("repository")
