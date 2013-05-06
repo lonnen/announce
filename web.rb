@@ -16,12 +16,9 @@ class GithubTwitter
     return unless payload["ref"].include?("tags")
     repo = payload["repository"]["name"]
     payload['tag'] = payload["ref"][10..-1]
-    proc = Proc.new do
-      payload
-    end
 
     template = ERB.new("New [<%= payload['repository']['name'] %>] tag: <%= payload['tag'] %> - <%= payload['repository']['url'] %>")
-    connect(repo).update(template.result(proc))
+    connect(repo).update(template.result(payload))
   end
 
   def connect(repo)
